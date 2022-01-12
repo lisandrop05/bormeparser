@@ -217,6 +217,7 @@ def regex_bold_acto(data):
     data: "Declaración de unipersonalidad. Socio único: BRENNAN KEVIN LIONEL. Nombramientos."
           "Sociedad unipersonal. Cambio de identidad del socio único: OLSZEWSKI GRZEGORZ. Ceses/Dimisiones."
     """
+    data = data.replace("  ",". ")
     acto_colon, arg_colon, nombreacto, nombreacto2 = REGEX_BOLD.match(data).groups()
     nombreacto += nombreacto2
     return acto_colon, arg_colon, nombreacto
